@@ -1,0 +1,101 @@
+/* index.html */
+
+body {
+    font-family: "Times New Roman", serif;
+    line-height: 1;
+    color: black;
+    background: url("../images/concrete_seamless.png")
+}
+
+div {
+    display: block;
+}
+
+#nav-container {
+    position: static;
+    margin: 0 20px 20px;
+    padding: 0 0 0 10px;
+    height: auto;
+    width: auto;
+    display: visible!important;
+    opacity: 1.0!important;
+    font-size: 90%
+}
+
+#nav-container {
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    background-color: #fffeff;
+    border-style: solid;
+    border-color: black;
+    opacity: .95;
+    position: fixed;
+    z-index: 9999;
+    margin-top: 50px;
+    margin-left: 50px;
+    top: 0;
+    left: 0;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #54A14E;
+    text-decoration: none;
+}
+
+a:active {
+    color: #54a16d;
+    text-decoration: none;
+}
+
+/* course.html */
+
+#courses-holder {
+    background-color: #fff;
+    color: #555;
+    padding: 5px 10px 10px 10px;
+    margin: 50px 50px 50px 240px;
+}
+
+
+/* course-lecture.html */
+
+#course-lectures-holder {
+    float: left;
+    margin-right: 20px;
+    margin-top: 42px;
+    margin-left: 240px;
+    padding-bottom: 53px;
+}
+
+div.lecture-thumbnail {
+    width: 170px;
+    height: 178px;
+    overflow: hidden;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    background: black;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+#lectureTitleHover {
+    position: absolute;
+    color: #ffffff;
+    left: 0%;
+    top: 35%;
+    text-align: center;
+    vertical-align: middle;  
+    width: 100%;
+}

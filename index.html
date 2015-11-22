@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/factory.js"></script>
+ 
+</head>
+
+<body ng-app="myApp">
+
+    <div id="nav-container">
+        <h3><a>Interactive Streaming Platform</a></h3>
+        <ul id="nav">
+            <li class="home"><a ui-sref="home">Home</a></li>
+            <li class="about"><a ui-sref="about">About</a></li>
+            <li class="courses"><a ui-sref="courses">Courses</a></li>
+        </ul>
+    </div>
+    
+    <div ui-view></div>
+
+</body>

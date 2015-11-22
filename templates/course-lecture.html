@@ -1,0 +1,13 @@
+<div id="course-lectures-holder" style="display: block;">
+    
+    <div class="lecture-thumbnail" ng-repeat="lecture in lectures | orderBy:'lecture_no'" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+        <img ng-src="{{lecture.thumbnail}}" ng-show="hoverEdit" style="display: inline;">
+        <img ng-src="{{lecture.thumbnail}}" ng-show="lectureDisplayed" style="display: inline; opacity: 0.35;">
+        <span id="lectureTitleHover" ng-show="lectureDisplayed">
+            Lecture {{lecture.lecture_no}}
+            <br>
+            {{lecture.title}}
+        </span>
+    </div>
+
+</div>

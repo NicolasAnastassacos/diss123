@@ -1,0 +1,9 @@
+<div id="courses-holder">
+
+    <h1>Courses</h1>
+
+    <div ng-repeat="course in courses">
+        <p><a ui-sref="course-lectures({coursename : course.title})">{{course.title}}</a></p>
+    </div>
+
+</div>
