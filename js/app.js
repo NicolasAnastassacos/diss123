@@ -28,6 +28,10 @@ angular.module('myApp', ['ui.router'])
             url: '/register',
             templateUrl: 'templates/register.html',
         })
+        .state('chat', {
+            url: '/chat',
+            templateUrl: 'templates/chat.html',
+        })
 })
 
 .controller('HomeCtrl', function($scope, student) {
@@ -54,7 +58,7 @@ angular.module('myApp', ['ui.router'])
             this.hoverEdit = true;
             this.lectureDisplayed = false;
         };
-    
+
         student.getLectures($stateParams.coursename, function(lectures) {
             $scope.lectures = lectures;
 
@@ -69,4 +73,4 @@ angular.module('myApp', ['ui.router'])
 
         });
 
-    });
+    })

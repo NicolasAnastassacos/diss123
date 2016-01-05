@@ -39,8 +39,11 @@ angular.module('myApp')
             if (course_name === "Class: The Psychology of Wealth, Poverty, and Social Rank") {
                 course_id = 7;
             }
-            if (course_name == "Machine Learning Practical") {
+            if (course_name === "Machine Learning Practical") {
                 course_id = 8;
+            }
+            if (course_name === "undefined") {
+                couse_id = null;
             }
             
             $http({

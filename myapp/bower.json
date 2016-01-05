@@ -1,0 +1,17 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.1.1"
+  },
+  "resolutions": {
+    "angular-sanitize": "1.4.3",
+    "ionic": "~1.0.0",
+    "angular-animate": "^1.4.8",
+    "angular": ">= 1.0.8"
+  },
+  "dependencies": {
+    "Autolinker.js": "~0.22.0",
+    "angular-youtube-mb": "~1.1.1"
+  }
+}

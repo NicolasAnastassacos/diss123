@@ -1,0 +1,15 @@
+<ion-view view-title="Courses">
+
+  <ion-content class="course-page" style="top:44px;">
+    <div ng-repeat="course in courses">
+      <a ui-sref="app.course-lectures({course_name : course.title, course_id : course.id})">
+        <ion-card class="course">
+          <img src={{course.image}}/>
+          <p class="course-title">{{course.title}}</p>
+          <p class="course-description">{{course.description}}</p>
+        </ion-card>
+      </a>
+    </div>
+  </ion-content>
+
+</ion-view>

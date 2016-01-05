@@ -1,0 +1,13 @@
+<ion-view view-title="{{course_title}}">
+  <ion-content>
+    <ion-list ng-repeat="lecture in lectures">
+      <a ui-sref="app.lecture({lecture_title: lecture.title, lecture_id : lecture.id})" style="text-decoration: none;">
+        <ion-item style="background-color: rgba(255,255,255, 0.7) !important; border-bottom: 1px solid #C3C1C1;">
+          <img src="{{lecture.thumbnail}}" class="lecture-img">
+            <h2 class="lectureTitles"><b>{{lecture.title}}</b></h2>
+            <p><b>Keywords:</b> {{lecture.keywords}}</p>
+        </ion-item>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-view>

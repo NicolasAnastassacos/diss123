@@ -1,0 +1,84 @@
+<ion-view ng-controller="LectureCtrl" id="userMessagesView" view-title="{{lecture.title}}">
+
+
+  <div style="position: absolute; top: 60px; left: 30px; right: 60px;">
+    <div class="embed-responsive embed-responsive-16by9">
+      <youtube-video class="embed-responsive-item" video-url="lecture_url" player="lecture_video" player-width="'560px'" player-height="'300px'"></youtube-video>
+    </div>
+  </div>
+
+  <textarea class="notes" placeholder="What are you waiting for? Get to work!" style="position: absolute; top: 60px; left: 30px; right: 60px; height: 630px;" ng-model="notes"></textarea>
+
+  <button ng-click="lecture_video.seekTo(50)" style="height: 50px; width: 50px; position:fixed; bottom: 80px; left: 900px;">Play</button>
+
+  <button class="button button-positive button-fab" ng-click="saveNotes()" style="border-radius: 50% 50%; height: 50px; width: 50px; position:fixed; bottom: 80px; left: 1040px;">
+    <i class="icon ion-android-upload"></i>
+  </button>
+
+
+  <div class="loader-center" ng-if="!doneLoading">
+    <div class="loader">
+      <i class="icon ion-loading-c"></i>
+    </div>
+  </div>
+
+  <ion-content class="messages" has-bouncing="true" class="has-header has-footer" delegate-handle="userMessageScroll" style="width: 600px; min-height: 300px; position: absolute; margin-top:340px; ; width: 600px;">
+
+    <div ng-repeat="message in messages" class="message-wrapper" on-hold="onMessageHold($event, $index, message)">
+
+      <div ng-if="user._id !== message.userId">
+
+        <img ng-click="viewProfile(message)" class="profile-pic left" ng-src="{{toUser.pic}}" onerror="onProfilePicError(this)" />
+
+        <div class="chat-bubble left">
+
+          <div class="message" ng-bind-html="message.text | nl2br">
+          </div>
+
+          <div class="message-detail">
+            <span ng-click="viewProfile(message)" class="bold">{{toUser.username}}</span>,
+            <span am-time-ago="message.date"></span>
+          </div>
+
+        </div>
+      </div>
+
+      <div ng-if="user._id === message.userId">
+
+        <img ng-click="viewProfile(message)" class="profile-pic right" ng-src="{{user.pic}}" onerror="onProfilePicError(this)" />
+
+        <div class="chat-bubble right">
+
+          <div class="message" ng-bind-html="message.text | nl2br" autolinker>
+          </div>
+
+          <div class="message-detail">
+            <span ng-click="viewProfile(message)" class="bold">{{user.username}}</span>,
+            <span am-time-ago="message.date"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="cf"></div>
+
+    </div>
+  </ion-content>
+
+  <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate>
+    <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach style="width:600px;">
+      <textarea style="width: 600px;" ng-model="input.message" value="" placeholder="Send a message..." required minlength="1" maxlength="1500" msd-elastic></textarea>
+      <div class="footer-btn-wrap">
+        <button class="button button-icon icon ion-android-send footer-btn" style="display: inline-block;" type="submit" ng-disabled="!input.message || input.message === ''">
+        </button>
+      </div>
+
+      <div class="footer-btn-wrap">
+        <button class="button button-icon footer-btn2 icon ion-camera waves-effect waves-button waves-light" style="display: inline-block;" type="submit">
+        </button>
+      </div>
+
+    </ion-footer-bar>
+  </form>
+</ion-view>
